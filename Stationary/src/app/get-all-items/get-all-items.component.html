@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <button type="button" class="btn btn-primary" (click)="Getall()">Gell All Items</button>
+</div>
+
+<div *ngIf="check">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Product Serial No.</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Cost</th>
+            </tr>
+
+            <tr class="table-dark" *ngFor="let value of data">
+
+                <td scope="row">{{value.itemNo}}</td>
+                <td>{{value.itemName}}</td>
+                <td>{{value.itemPrice}}</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<!--
+<div *ngIf="check">
+    <h2>All Products are:</h2>
+    <div *ngFor="let value of data">
+        <p><label>Item_ID:</label>{{value.itemNo}}</p>
+        <p><label>Item_Name:</label>{{value.itemName}}</p>
+        <p><label>Item_price:</label>{{value.itemPrice}}</p>
+    </div>
+</div>
+const list: any[] = [];
+-->
