@@ -23,10 +23,6 @@ export class GetAllItemsComponent implements OnInit {
     this.check = true;
     this.service.getlist().subscribe(res => {
       this.data = res;
-      this.xyzAbc = res[0].itemId;
-      this.x = res[0].itemName;
-      this.y = res[0].itemPric;
-      alert(this.xyzAbc);
     });
   }
 }

@@ -17,8 +17,8 @@ export class TelegramService {
   }
 
   // GET Item Details By Id
-  getOne(no: number): any {
+  getOne(no: number): Observable<Product[]> {
     const tempUrl = this.url + 'item/' + no;
-    return this.http.get(tempUrl);
+    return this.http.get<Product[]>(tempUrl);
   }
 }

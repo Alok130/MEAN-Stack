@@ -11,11 +11,10 @@ GET http://localhost:3001/allItems
 POST http://localhost:3001/additem
 
 Content-Type: application/json
-
 {
-	"itemId": 107,
-	"itemName": "Check",
-	"itemCost": 21.22
+    "itemNo": 177,
+    "itemName": "Test Update1",
+    "itemPrice": 2.25
 }
 
 ####

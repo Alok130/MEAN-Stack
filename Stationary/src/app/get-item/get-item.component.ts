@@ -9,24 +9,27 @@ import { Product } from '../Model/product.model';
   providers: [TelegramService]
 })
 export class GetItemComponent implements OnInit {
-  check = false;
-  itemNo: any = 0;
-  allItem: any;
+  itemNo: number;
   data: Product[];
-  xyzAbc: string;
+
   constructor(private service: TelegramService) {}
 
   ngOnInit() {}
 
   GetOne() {
-    this.check = true;
-
-    this.check = true;
+    alert(this.itemNo);
     this.service.getOne(this.itemNo).subscribe(res => {
-      // this.data = res;
-      this.xyzAbc = res[0].itemName;
-      alert(this.xyzAbc);
+      this.data = res;
     });
+
+    // this.check = true;
+
+    // this.check = true;
+    // this.service.getOne(this.itemNo).subscribe(res => {
+    //   // this.data = res;
+    //   this.xyzAbc = res[0].itemName;
+    //   alert(this.xyzAbc);
+    // });
     /*
     this.service.getOne(this.itemNo).subscribe((res: any) => {
       if (res === 0) {

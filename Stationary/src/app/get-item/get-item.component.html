@@ -1,11 +1,13 @@
-<!-- <div class="container-fluid">
-    <button type="button" class="btn btn-primary" (click)="GetOne()">Gell All Items</button>
+<div class="container-fluid">
 
-    <input type="number" [(ngModel)]="item_no" placeholder="enter Item_Id" />
+    <button class="btn btn-primary" (click)="GetOne()">Gell Items</button>
+    <br /><br />
+
+    <input type="number" [(ngModel)]="itemNo" placeholder="Enter Item No." />
 
 </div>
 
-<div *ngIf="check">
+<div>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -14,7 +16,7 @@
                 <th scope="col">Product Cost</th>
             </tr>
 
-            <tr class="table-dark" *ngFor="let value of allItem">
+            <tr class="table-dark" *ngFor="let value of data">
 
                 <td scope="row">{{value.itemNo}}</td>
                 <td>{{value.itemName}}</td>
@@ -22,4 +24,4 @@
             </tr>
         </thead>
     </table>
-</div> -->
+</div>

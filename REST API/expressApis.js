@@ -185,9 +185,8 @@ app.get('/item/:id', (req, res) => {
     var connect = createConnection();
     var sqlquery = "Select * from itemtable where itemNo = " + idi;
     connect.query(sqlquery, (e, results) => {
-        // res.send(JSON.stringify(results))
-        alert("u got it")
-        res.send(results);
+        res.send(JSON.stringify(results))
+            // res.send(results);
     })
 });
 
