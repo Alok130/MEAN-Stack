@@ -1,4 +1,6 @@
+import { TelegramService } from './../Service/telegram.service';
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Model/product.model';
 
 @Component({
   selector: 'app-add-item',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent implements OnInit {
+  productModel = new Product(0, 'Enter Item Name', 0);
 
-  constructor() { }
+  constructor(private service: TelegramService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit() {
+    alert(this.productModel);
+    alert('Reached in Component');
+    this.service.addOne(this.productModel).subscribe((res: any) => {
+      alert(res);
+    });
   }
-
 }

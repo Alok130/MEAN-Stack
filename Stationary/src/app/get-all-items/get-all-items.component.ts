@@ -10,17 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetAllItemsComponent implements OnInit {
   data: Product[];
-  xyzAbc: any;
-  x: any;
-  y: any;
-  public check = false;
-  userModel = new Product(this.xyzAbc, this.x, this.y);
+
   constructor(private service: TelegramService) {}
 
   ngOnInit() {}
 
   Getall() {
-    this.check = true;
     this.service.getlist().subscribe(res => {
       this.data = res;
     });

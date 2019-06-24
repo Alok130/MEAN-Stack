@@ -1,7 +1,7 @@
+import { Product } from './../Model/product.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../Model/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,14 @@ export class TelegramService {
   getOne(no: number): Observable<Product[]> {
     const tempUrl = this.url + 'item/' + no;
     return this.http.get<Product[]>(tempUrl);
+  }
+
+  // Add Item To DataBase
+  addOne(obj: Product): any {
+    const tempUrl = this.url + 'additem';
+    console.log(tempUrl);
+    console.log('Reached in Service');
+    console.log(obj);
+    return this.http.post<any>(tempUrl, obj);
   }
 }
