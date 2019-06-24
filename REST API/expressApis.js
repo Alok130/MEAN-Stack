@@ -137,11 +137,16 @@ app.delete('/remove/:id', (req, res) => {
 // url:http://localhost:3001/update
 // UPDATE Item from Database
 app.put('/update', (req, res) => {
+    console.log(req.body);
     var data = req.body;
+    console.log(data.itemNo);
     var connect = createConnection();
-    var sqlquery = util.format("Update itemtable set itemName = '%s', itemPrice = '%s' where itemNo = '%s'", data.itemName, data.itemCost, data.itemId);
+    var sqlquery = util.format("Update itemtable set itemName = '%s', itemPrice = '%s' where itemNo = '%s'", data.itemName, data.itemPrice, data.itemNo);
     connect.query(sqlquery, (e, result) => {
-        if (e) res.send("Error Occured");
+        if (e) {
+            res.send("Error Occured");
+        }
+        console.log('Successfully Updated ', result.id);
         res.send("Updation Successfull");
     })
 });

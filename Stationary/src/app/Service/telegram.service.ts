@@ -30,4 +30,10 @@ export class TelegramService {
     console.log(obj);
     return this.http.post<any>(tempUrl, obj);
   }
+
+  // Update Iten in DataBase
+  updateItem(obj: Product): any {
+    const tempUrl = this.url + 'update';
+    return this.http.put<any>(tempUrl, obj);
+  }
 }

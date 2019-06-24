@@ -1,3 +1,28 @@
-<p>
-  all-item-details works!
-</p>
+<div class="container-fluid">
+    <h2>Update Items</h2>
+
+    <form #userForm='ngForm' (ngSubmit)="onUpdate()">
+
+        <div class="form-group">
+            <label for="">Item No.</label>
+            <input type="number" name="itemNo" required class="form-control" placeholder="Enter Item No." aria-describedby="helpId" [(ngModel)]="updatedData.itemNo">
+            <small id="helpId" class="text-muted">Required</small>
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Item Name</label>
+            <input type="text" required #name="ngModel" class="form-control" placeholder="Enter Item Name" aria-describedby="helpId" name="itemName" [(ngModel)]="updatedData.itemName">
+            <small id="helpId" class="text-muted">Mandetory</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Item Cost</label>
+            <input type="number" name="itemCost" class="form-control" placeholder="Enter Cost Price" aria-describedby="helpId" [(ngModel)]="updatedData.itemPrice">
+            <small id="helpId" class="text-muted">Required</small>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
